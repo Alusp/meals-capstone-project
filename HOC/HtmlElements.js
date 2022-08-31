@@ -53,8 +53,13 @@ const Wrapper = (props) => Element({
   ...props,
 });
 
+const Image = (props) => Element({
+  component: 'img',
+  ...props,
+});
+
 export {
   Anchor, Paragraph, ChildText,
   ListContainer, List, PrimaryHeading,
-  SecondaryHeading, Button, Form, Input, Wrapper,
+  SecondaryHeading, Button, Form, Input, Wrapper, Image,
 };
