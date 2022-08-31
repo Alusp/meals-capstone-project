@@ -21,7 +21,7 @@ module.exports = merge(common, {
       new TerserPlugin(),
       new MinifyCSS(),
       new HtmlWebpackPlugin({
-        template: './src/public/index.html',
+        template: './src/index.html',
         minify: {
           removeAttributionQuotes: true,
           collapseWhitespaces: true,
@@ -39,8 +39,8 @@ module.exports = merge(common, {
   module: {
     rules: [
       {
-        test: /\.scss$/,
-        use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
+        test: /\.css$/,
+        use: [MiniCssExtractPlugin.loader, 'css-loader' ],
       },
     ],
   },
