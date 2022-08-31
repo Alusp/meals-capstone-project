@@ -4,7 +4,7 @@ module.exports = {
     rules: [
       {
         test: /\.html$/i,
-        loader: "html-loader",
+        loader: 'html-loader',
       },
       {
         test: /\.(png|jpe?g|gif|webp|svg)$/,
