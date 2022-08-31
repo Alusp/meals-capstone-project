@@ -1,5 +1,5 @@
 import {
-  List, Paragraph, ChildText, Button,
+  List, Paragraph, Button,
   ListContainer, Wrapper,
   Image, SecondaryHeading, Input,
 } from '../../HOC/HtmlElements.js';
@@ -13,9 +13,9 @@ const ul = ListContainer({
   className: 'meals-grid_wrapper',
 });
 
-const delay = (time) => new Promise((resolve) => {
-  setTimeout(resolve, time);
-});
+// const delay = (time) => new Promise((resolve) => {
+//   setTimeout(resolve, time);
+// });
 
 // sectionForm.insertAdjacentElement('beforeend', msg);
 
