@@ -1,3 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;600;700&family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Edu+VIC+WA+NT+Beginner:wght@600&family=Josefin+Sans:wght@300;400;600;700&display=swap');
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scrollbar-width: auto;
+  scrollbar-color: #8f54a0 #fff;
+}
+
+*::-webkit-scrollbar {
+  width: 16px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #fff;
+  border-radius: 2rem;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: rgb(255, 157, 157);
+  background: linear-gradient(180deg, rgba(255, 157, 157, 1) 0%, rgba(194, 32, 252, 1) 55%, rgba(0, 212, 255, 1) 100%);
+  border-radius: 1.6rem;
+  border: 3px solid #fff;
+}
+
+html {
+  font-size: 62.5%;
+  height: 100%;
+}
+
 body {
-  background-color: blue;
+  width: 100%;
+  min-height: 100%;
+  height: max-content;
+  background-image: linear-gradient(to bottom, #da58a2, #bd61ac, #a068b0, #846cac, #6c6da2, #636da1, #596d9f, #506d9d, #486ea8, #3e70b3, #2f71be, #1573c9);
+
+  @media (min-width: 550px) {
+    background-image: linear-gradient(to right bottom, #da58a2, #bd61ac, #a068b0, #846cac, #6c6da2, #636da1, #596d9f, #506d9d, #486ea8, #3e70b3, #2f71be, #1573c9);
+  }
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 2.6rem;
 }
