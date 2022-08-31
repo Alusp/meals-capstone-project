@@ -1,144 +1,115 @@
 import {
   List, Paragraph, ChildText, Button,
-  Input, Form,
+  ListContainer, Wrapper,
+  Image, SecondaryHeading, Input,
 } from '../../HOC/HtmlElements.js';
 
 import Api from '../../modules/Api.js';
 
 import './Main.css';
 
-const UnorderList = document.querySelector('.playerList');
-const sectionForm = document.querySelector('.section-form');
+const ul = ListContainer({
+  component: 'ul',
+  className: 'meals-grid_wrapper',
+});
 
 const delay = (time) => new Promise((resolve) => {
   setTimeout(resolve, time);
 });
 
-const msg = Paragraph({
-  className: 'messages',
-});
+// sectionForm.insertAdjacentElement('beforeend', msg);
 
-sectionForm.insertAdjacentElement('beforeend', msg);
-
-const scoreBoardHandler = (onLoad = true) => {
+const mealContainer = () => {
   (async () => {
-    const msg = document.querySelector('.messages');
     const resultant = await Api.get();
     if (typeof resultant === 'string') {
-      msg.textContent = resultant;
-      msg.classList.add('warning');
-      await delay(5000);
-      msg.classList.remove('warning');
-      return false;
+      // a
     }
-    const { result } = resultant;
-    msg.textContent = onLoad ? 'Score Added Successfully' : 'List Updated Successfully ';
-    msg.className = 'messages';
-    msg.classList.add('success');
-    UnorderList.textContent = '';
-    result.forEach((eachList, index) => {
+    const { meals } = resultant;
+    ListContainer.textContent = '';
+    meals.forEach((eachList) => {
       const list = List({
-        className: 'player',
-        id: `playerID-${index + 1}`,
+        className: 'meals-grid_wrapper-list',
+        id: `meal-card-${eachList.idMeal}`,
       });
 
-      const paragraph = Paragraph({
-        className: 'player_detail',
-        textContent: `${eachList.user}: `,
+      const article = Wrapper({
+        component: 'article',
+        className: 'meals-grid_wrapper-article',
       });
 
-      const span = ChildText({
-        className: 'score',
-        textContent: eachList.score,
+      const div1 = Wrapper({
+        component: 'div',
+        className: 'meals-grid_wrapper-article__img-wrapper',
       });
 
-      paragraph.append(span);
-      list.append(paragraph);
-      UnorderList.append(list);
+      const img = Image({
+        src: eachList.strMealThumb,
+        className: 'img',
+        alt: 'meals',
+      });
+
+      div1.append(img);
+
+      const h2 = SecondaryHeading({
+        className: 'meal-title',
+        textContent: eachList.strMeal,
+      });
+
+      const div3 = Wrapper({
+        component: 'div',
+        className: 'user_interaction',
+      });
+
+      const div4 = Wrapper({
+        component: 'div',
+        className: 'like-wrapper',
+      });
+
+      const label = Wrapper({
+        component: 'label',
+        className: 'checkbox-wrapper',
+        for: `like-count-${eachList.idMeal}`,
+      });
+
+      const input = Input({
+        type: 'checkbox',
+        className: 'like-checkbox',
+        id: `like-count-${eachList.idMeal}`,
+        name: `like-count-${eachList.idMeal}`,
+      });
+
+      const iTag = Wrapper({
+        component: 'i',
+        className: 'fa-solid fa-heart icon',
+      });
+
+      label.append(input, iTag);
+
+      const counterP = Paragraph({
+        className: 'counter',
+        textContent: '(0)',
+      });
+
+      div4.append(label, counterP);
+
+      const btn = Button({
+        className: 'comment-btn',
+        textContent: 'comments',
+      });
+
+      div3.append(div4, btn);
+
+      article.append(div1, h2, div3);
+
+      list.append(article);
+
+      ul.append(list);
     });
-    await delay(2000);
-    msg.classList.remove('success');
-    return true;
   })();
+  return ul;
 };
 
-const Main = () => {
-  const refreshContainer = document.querySelector('.section-refresh_container');
-
-  const errorMessage = Paragraph({
-    className: 'player_detail',
-    textContent: '!! Please Add Some Data !!',
-  });
-
-  const button = Button({
-    textContent: 'Refresh',
-    className: 'refresh-btn',
-    onclick: () => {
-      scoreBoardHandler(false);
-      if (UnorderList.children.length < 1) {
-        UnorderList.append(errorMessage);
-      }
-    },
-  });
-  refreshContainer.appendChild(button);
-
-  const playerNameInput = Input({
-    type: 'text',
-    className: 'input',
-    placeholder: 'Your name',
-    ariaLabel: 'please enter yourname',
-  });
-
-  const playerScoreInput = Input({
-    type: 'number',
-    className: 'input',
-    placeholder: 'Your score',
-    ariaLabel: 'please try to attempy wisely',
-  });
-
-  const submit = Input({
-    type: 'submit',
-    className: 'input submit-btn',
-    value: 'Submit',
-    ariaLabel: 'please submit button to check result',
-  });
-
-  const form = Form({
-    className: 'form',
-    onsubmit: (e) => {
-      e.preventDefault();
-      const user = playerNameInput.value;
-      const score = playerScoreInput.value;
-      (async () => {
-        const resultant = await Api.post({ user, score });
-        if (typeof resultant === 'string') {
-          msg.textContent = resultant;
-          msg.classList.add('warning');
-          await delay(5000);
-          msg.classList.remove('warning');
-          return false;
-        }
-        form.reset();
-        scoreBoardHandler();
-        return true;
-      })();
-    },
-  });
-
-  form.append(
-    playerNameInput,
-    playerScoreInput,
-    submit,
-  );
-  if (UnorderList.children.length < 1) {
-    const msg = document.querySelector('.messages');
-    errorMessage.textContent = 'please wait...';
-    msg.textContent = 'please wait...';
-    msg.classList.add('process');
-    UnorderList.append(errorMessage);
-  }
-  scoreBoardHandler(false);
-  sectionForm.append(form);
-};
+const Main = () => mealContainer();
 
 export default Main;
