@@ -1,10 +1,5 @@
 import './style.css';
-import Api from '../modules/Api.js';
+import Main from '../components/Main/Main.js';
 
-const getData = new Api();
-(async () => {
-  const { meals } = await getData.get();
-  meals.forEach((each) => {
-    console.log(each.idMeal);
-  });
-})();
+const root = document.querySelector('#root');
+root.append(Main());
