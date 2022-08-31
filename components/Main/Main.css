@@ -1,180 +1,81 @@
-.main {
-  display: flex;
-  flex-direction: column;
-  width: 90%;
-  margin: auto;
-  margin-top: 5rem;
-  justify-content: space-between;
-  font-family: "Comic Neue", cursive;
-  gap: 5rem;
-}
-@media (min-width: 600px) {
-  .main {
-    gap: 5rem;
-    flex-direction: row;
-    margin-top: 10rem;
-  }
+.meals-grid_wrapper {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(4, 25rem);
+  justify-items: center;
+  justify-content: center;
+  gap: 3.2rem;
 }
 
-.section {
+.meals-grid_wrapper-list {
+  padding: 2rem;
+  background-color: rgb(114, 187, 251);
+  border-radius: 1.75rem;
+}
+
+.meals-grid_wrapper-article {
+  width: inherit;
   display: flex;
   flex-direction: column;
-  font-family: "Josefin Sans", sans-serif;
-}
-.section-refresh_container {
-  display: flex;
-  width: 100%;
+  height: 100%;
+  gap: 1.6rem;
   justify-content: space-between;
-  gap: 8rem;
+}
+
+.meals-grid_wrapper-article__img-wrapper {
+  width: 100%;
+  border-radius: 1.75rem;
+  overflow: hidden;
+}
+
+.meals-grid_wrapper-article .img {
+  display: block;
+  width: 100%;
+  object-fit: cover;
+  object-position: top;
+}
+
+.user_interaction {
+  display: flex;
+  justify-content: space-between;
+}
+
+.meal-title {
+  font-size: 1.6rem;
+}
+
+.like-wrapper {
+  display: flex;
   align-items: center;
-}
-.section-refresh_container .refresh-btn {
-  border: none;
-  font-weight: bold;
-  font-size: 1.4rem;
-  padding: 0.6rem 2rem;
-  vertical-align: middle;
-  border-radius: 0.6rem;
-  background-color: rgb(247, 174, 18);
-  box-shadow: 0.5rem 0.5rem 0.25rem 0.1rem rgb(129, 91, 9);
-}
-@media (min-width: 600px) {
-  .section-refresh_container .refresh-btn {
-    font-size: 1.65rem;
-  }
-}
-.section-refresh_container .refresh-btn:active {
-  transform: translate(0.5rem, 0.5rem);
-  box-shadow: 0.5rem 0.5rem 0.25rem 0.1rem transparent;
-}
-.section-table, .section-form {
-  padding: 3rem;
-  border-radius: 2rem;
-  background-color: rgba(255, 248, 220, 0.15);
-  box-shadow: inset 0 0 2px 2px rgba(255, 248, 220, 0.25), 0 0 0.5rem 0.25rem rgba(0, 0, 0, 0.02);
-}
-.section-table {
-  gap: 2.6rem;
-  width: 100%;
-}
-.section-table .playerList {
-  height: 20rem;
-  overflow-y: scroll;
-  scroll-behavior: smooth;
-  padding-right: 2rem;
-}
-@media (min-width: 600px) {
-  .section-table .playerList {
-    height: 30rem;
-  }
-}
-.section-table .player {
-  padding: 0.6rem;
-  font-family: "Comfortaa", cursive;
-  font-weight: normal;
-}
-.section-table .player:nth-child(even) {
-  background-color: rgb(214, 214, 214);
-}
-.section-table .player_detail {
-  font-size: 2rem;
-  font-weight: 600;
-}
-.section-form {
-  display: flex;
-  flex-direction: column;
-  gap: 2.6rem;
-  width: 100%;
-  margin-right: auto;
+  gap: 0.6rem;
   height: max-content;
+  max-height: 3.6rem;
+}
+
+.checkbox-wrapper {
   position: relative;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
-.section-form .form {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-}
-.section-form .input:not(:nth-child(3)) {
-  height: 4rem;
-  padding-left: 0.6rem;
-  border: none;
-  font-size: 1.5rem;
-  background-color: rgb(255, 248, 220);
-}
-.section-form .input:not(:nth-child(3))::placeholder {
-  font-size: 1.5rem;
-  font-family: inherit;
-  font-weight: bold;
-}
-.section-form .input:not(:nth-child(3)):focus {
-  outline: none;
-  box-shadow: 0 0 0.1rem 0.25rem rgb(255, 108, 108);
-}
-.section-form .submit-btn {
-  width: max-content;
-  align-self: flex-end;
-  border: none;
-  border-radius: 0.6rem;
-  background-color: green;
-  color: white;
-  font-weight: bold;
-  font-size: 1.65rem;
-  padding: 0.6rem 2rem;
-  box-shadow: 0.5rem 0.5rem 0.25rem 0.1rem rgb(0, 58, 0);
-}
-.section-form .submit-btn:hover {
+
+.like-checkbox {
+  position: absolute;
+  opacity: 0;
   cursor: pointer;
 }
-.section-form .submit-btn:active {
-  transform: translate(0.5rem, 0.5rem);
-  box-shadow: 0.5rem 0.5rem 0.25rem 0.1rem transparent;
-}
-.section-form .messages {
-  position: absolute;
-  bottom: -8rem;
-  width: 85%;
-  padding: 1rem;
-  text-align: center;
-  border-radius: 0.5rem;
-  font-size: 1.5rem;
-  opacity: 0;
-  left: 50%;
-  right: 50%;
-  font-weight: bold;
-  transform: translateX(-50%);
-  transition: opacity 0.5s ease-out;
-}
-.section-form .messages.warning {
-  opacity: 1;
-  background-color: red;
+
+.icon {
   color: white;
-  transition: opacity 0.5s ease-in;
+  -webkit-text-stroke: 1px black;
+  font-size: 1.9rem;
 }
-.section-form .messages.process {
-  opacity: 1;
-  background-color: rgb(247, 255, 28);
-  transition: opacity 0.5s ease-in;
-}
-.section-form .messages.success {
-  opacity: 1;
-  background-color: rgb(0, 194, 0);
-  transition: opacity 0.5s ease-in;
-}
-.section .score-heading,
-.section .form-heading {
-  font-size: 2.6rem;
-  text-transform: uppercase;
-  color: rgba(0, 0, 0, 0.9);
-  text-shadow: 0.2rem 0.2rem 0.1rem cornsilk, -0.2rem 0.2rem 0 rgb(255, 0, 123);
-}
-@media (min-width: 600px) {
-  .section .score-heading,
-.section .form-heading {
-    font-size: 3.6rem;
-  }
-}
-.section .form-heading {
-  text-align: center;
+
+/* When the checkbox is checked, add a blue background */
+.checkbox-wrapper .like-checkbox:checked ~ .icon {
+  color: crimson;
 }
 
 /*# sourceMappingURL=Main.css.map */
