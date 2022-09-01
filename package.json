@@ -2,7 +2,9 @@
   "name": "meals-capstone-project",
   "version": "1.0.0",
   "description": "",
-  "main": "webpack.common.js",
+  "private": true,
+  "modules": "true",
+  "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --config webpack.dev.js --open",
     "build": "webpack --config webpack.prod.js"
