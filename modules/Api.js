@@ -35,7 +35,7 @@ class Api {
             } else {
               obj = null;
             }
-          } else if(obj.type === 'comment') {
+          } else if (obj.type === 'comment') {
             const id = obj.item_id;
             url = `${this.comment_url}?item_id=${id}`;
           } else {
