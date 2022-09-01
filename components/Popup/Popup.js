@@ -39,7 +39,7 @@ const popUpFunction = async (id) => {
   const parent = document.querySelector('.ingredients');
 
   const hideRecipe = document.getElementById('hide-recipe');
-  
+
   const ingredients = Object.keys(meals).filter((each) => each.includes('strIngredient') && meals[each] !== '' && meals[each] !== null);
 
   ingredients.forEach((each) => {
