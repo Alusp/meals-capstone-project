@@ -35,9 +35,12 @@ class Api {
             } else {
               obj = null;
             }
-          } else {
+          } else if(obj.type === 'comment') {
             const id = obj.item_id;
             url = `${this.comment_url}?item_id=${id}`;
+          } else {
+            url = this.like_url;
+            obj = null;
           }
           dataHolder = await (await fetch(url, obj ? option(obj) : [])).json();
         } else if (obj.type === 'comment') {
