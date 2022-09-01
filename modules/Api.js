@@ -35,13 +35,20 @@ class Api {
             } else {
               obj = null;
             }
-          } else {
+          } else if (obj.type === 'comment') {
             const id = obj.item_id;
             url = `${this.comment_url}?item_id=${id}`;
+          } else {
+            url = this.like_url;
+            obj = null;
           }
           dataHolder = await (await fetch(url, obj ? option(obj) : [])).json();
         } else if (obj.type === 'comment') {
           url = this.comment_url;
+          delete obj.type;
+          dataHolder = await (await fetch(url, obj ? option(obj) : [])).text();
+        } else if (obj.type === 'like') {
+          url = this.like_url;
           delete obj.type;
           dataHolder = await (await fetch(url, obj ? option(obj) : [])).text();
         }
@@ -60,9 +67,9 @@ class Api {
   post = async (obj, like = false) => {
     let data;
     if (like) {
-      console.log('lke');
+      data = await this.promisedData(obj, like);
     } else if (obj.username !== '' && obj.comment !== '') {
-      data = await this.promisedData(obj, true);
+      data = await this.promisedData(obj, like);
     } else {
       data = new Error('Please fill the form, before submission ...').message;
     }

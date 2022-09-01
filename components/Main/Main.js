@@ -14,11 +14,7 @@ const ul = ListContainer({
   className: 'meals-grid_wrapper',
 });
 
-// const delay = (time) => new Promise((resolve) => {
-//   setTimeout(resolve, time);
-// });
-
-// sectionForm.insertAdjacentElement('beforeend', msg);
+const likeApiHandler = (resultant, id) => resultant.filter((each) => each.item_id === id);
 
 const mealContainer = () => {
   (async () => {
@@ -28,6 +24,8 @@ const mealContainer = () => {
     }
     const { meals } = resultant;
     ListContainer.textContent = '';
+    const likeResultant = await Api.get({ type: 'like' });
+
     meals.forEach((eachList) => {
       const list = List({
         className: 'meals-grid_wrapper-list',
@@ -73,24 +71,31 @@ const mealContainer = () => {
         for: `like-count-${eachList.idMeal}`,
       });
 
-      const input = Input({
-        type: 'checkbox',
-        className: 'like-checkbox',
-        id: `like-count-${eachList.idMeal}`,
-        name: `like-count-${eachList.idMeal}`,
-      });
-
       const iTag = Wrapper({
         component: 'i',
         className: 'fa-solid fa-heart icon',
       });
 
-      label.append(input, iTag);
+      const [likeObj] = likeApiHandler(likeResultant, eachList.idMeal);
 
       const counterP = Paragraph({
         className: 'counter',
-        textContent: '(0)',
+        textContent: `(${likeObj ? likeObj.likes : 0})`,
       });
+
+      const input = Input({
+        type: 'checkbox',
+        className: 'like-checkbox',
+        id: `like-count-${eachList.idMeal}`,
+        name: `like-count-${eachList.idMeal}`,
+        onclick: (e) => (async () => {
+          if (e.target.checked) {
+            await Api.post({ item_id: eachList.idMeal, type: 'like' }, true);
+          }
+        })(),
+      });
+
+      label.append(input, iTag);
 
       div4.append(label, counterP);
 
