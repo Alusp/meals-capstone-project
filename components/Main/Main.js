@@ -73,24 +73,31 @@ const mealContainer = () => {
         for: `like-count-${eachList.idMeal}`,
       });
 
-      const input = Input({
-        type: 'checkbox',
-        className: 'like-checkbox',
-        id: `like-count-${eachList.idMeal}`,
-        name: `like-count-${eachList.idMeal}`,
-      });
-
       const iTag = Wrapper({
         component: 'i',
         className: 'fa-solid fa-heart icon',
       });
 
-      label.append(input, iTag);
-
       const counterP = Paragraph({
         className: 'counter',
         textContent: '(0)',
       });
+
+      const input = Input({
+        type: 'checkbox',
+        className: 'like-checkbox',
+        id: `like-count-${eachList.idMeal}`,
+        name: `like-count-${eachList.idMeal}`,
+        onclick: (e) => (async () => {
+          if (e.target.checked) {
+            await Api.post({ item_id: eachList.idMeal, type: 'like' }, true);
+            const getCounter = Number(counterP.textContent.replace('(', '').replace(')', '').trim());
+            // counterP.textContent = getCounter + 1;
+          }
+        })(),
+      });
+
+      label.append(input, iTag);
 
       div4.append(label, counterP);
 
