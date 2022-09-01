@@ -44,6 +44,10 @@ class Api {
           url = this.comment_url;
           delete obj.type;
           dataHolder = await (await fetch(url, obj ? option(obj) : [])).text();
+        } else if (obj.type === 'like') {
+          url = this.like_url;
+          delete obj.type;
+          dataHolder = await (await fetch(url, obj ? option(obj) : [])).text();
         }
       } catch (err) {
         dataHolder = new Error('Oops ! Something went wrong ...').message;
@@ -60,9 +64,9 @@ class Api {
   post = async (obj, like = false) => {
     let data;
     if (like) {
-      console.log('lke');
+      data = await this.promisedData(obj, like);
     } else if (obj.username !== '' && obj.comment !== '') {
-      data = await this.promisedData(obj, true);
+      data = await this.promisedData(obj, like);
     } else {
       data = new Error('Please fill the form, before submission ...').message;
     }
