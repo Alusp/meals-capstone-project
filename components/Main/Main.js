@@ -22,7 +22,7 @@ const ul = ListContainer({
 
 const mealContainer = () => {
   (async () => {
-    const resultant = await Api.get();
+    const resultant = await Api.get('getting_meal');
     if (typeof resultant === 'string') {
       // a
     }
