@@ -5,6 +5,7 @@ import {
 } from '../../HOC/HtmlElements.js';
 
 import Api from '../../modules/Api.js';
+import popUpFunction from '../Popup/Popup.js';
 
 import './Main.css';
 
@@ -96,6 +97,7 @@ const mealContainer = () => {
       const btn = Button({
         className: 'comment-btn',
         textContent: 'comments',
+        onclick: () => popUpFunction(eachList.idMeal),
       });
 
       div3.append(div4, btn);
