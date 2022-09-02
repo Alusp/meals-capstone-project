@@ -91,6 +91,9 @@ const mealContainer = () => {
         onclick: (e) => (async () => {
           if (e.target.checked) {
             await Api.post({ item_id: eachList.idMeal, type: 'like' }, true);
+            let counter = Number(counterP.textContent.replace('(', '').replace(')', '').trim());
+            counter += 1;
+            counterP.textContent = `(${counter})`;
           }
         })(),
       });
