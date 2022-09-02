@@ -18,7 +18,7 @@
 
 ## Video Demonstration
 
-[** Watch 😄 **](https://drive.google.com/file/d/1-TFxI_a_O_rBH_BTPMVTjnXxtaribpdC/view?usp=sharing)
+[** Watch 😄 **](https://drive.google.com/file/d/1fwDNwqgGSCS1jN-kcN9urNWYLAgeol1T/view?usp=sharing)
 
 ## Screenshots 
 
@@ -27,12 +27,11 @@
 
 ## Getting Started
 
-To get a local copy up and running follow these simple example steps. Please make sure on order to use the this project you need to install
-`DART-SASS` compiler.
+To get a local copy up and running follow these simple example steps. Please make sure on order to use the this project you need to install all dependencies.
 
 ### Prerequisites
 
-- In order to explore this repository, you must have a good knowledge on HTML5 - semantics, CSS3 and JavaScript with ES6.
+- In order to explore this repository, you must have a good knowledge on HTML5 - semantics, CSS and JavaScript with ES6 and webpack.
 
 ### Setup
 
@@ -87,6 +86,7 @@ I have added the linters or tests in order to avoid anykind of typos and ensure 
 
 - GitHub: [@Alusp](https://github.com/Alusp)
 - LinkedIn: [@alusine-jalloh](https://www.linkedin.com/in/alusine-jalloh)
+- Twitter: [@aseni_jalloh](https://twitter.com/aseni_jalloh)
 
 👤 **Author2**
 
