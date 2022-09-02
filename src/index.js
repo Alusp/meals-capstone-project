@@ -11,15 +11,20 @@ menuParent.addEventListener('click', (e) => {
   allMenu.forEach((each) => each.classList.remove('active'));
   e.target.classList.add('active');
   const getNode = e.target;
+  const allMenuItem = document.querySelectorAll('.meals-grid_wrapper-list');
   if (getNode.textContent === 'Most Liked') {
-    const allMenuItem = document.querySelectorAll('.meals-grid_wrapper-list');
     allMenuItem.forEach((each) => {
       const counter = each.querySelector('.counter');
       if (counter.textContent === '(0)') {
-        each.remove();
+        each.classList.add('display-none');
       }
     });
   } else if (getNode.textContent.includes('Meals')) {
-    root.append(Main());
+    allMenuItem.forEach((each) => {
+      const counter = each.querySelector('.counter');
+      if (counter.textContent === '(0)') {
+        each.classList.remove('display-none');
+      }
+    });
   }
 });

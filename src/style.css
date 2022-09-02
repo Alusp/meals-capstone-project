@@ -102,3 +102,7 @@ h6 {
 #root {
   padding-top: 5rem;
 }
+
+.display-none {
+  display: none;
+}
