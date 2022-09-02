@@ -43,7 +43,7 @@ const popUpFunction = async (id) => {
   `;
   const recipe = document.getElementById('recipe');
   recipe.style.display = 'block';
-   
+
   const commentContainer = document.querySelector('.commentUnorderedList');
   const parent = document.querySelector('.ingredients');
 
@@ -65,7 +65,6 @@ const popUpFunction = async (id) => {
     commentContainer.textContent = 'Comment Not Found !!';
   }
 
-
   ingredients.forEach((each) => {
     const child = document.createElement('li');
     child.className = 'ingredient-list';
@@ -78,6 +77,5 @@ const popUpFunction = async (id) => {
     overlay.classList.add('disable');
   });
 };
-
 
 export default popUpFunction;
