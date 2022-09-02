@@ -59,3 +59,45 @@ h5,
 h6 {
   font-size: 2.6rem;
 }
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 2rem;
+  padding: 1.6rem 2.6rem;
+}
+
+.logo {
+  font-size: 4rem;
+  width: max-content
+}
+
+.nav-menu {
+  width: auto;
+}
+
+.nav-menu_ul {
+  display: flex;
+  gap: 3rem;
+  justify-content: flex-end;
+}
+
+.nav-menu_option {
+  border: 0.2rem solid transparent;
+  padding: 1rem;
+}
+
+.nav-menu_option:hover {
+  cursor: pointer;
+  color: white;
+  border-bottom-color: rgba(255, 255, 255, 0.829);
+}
+
+.nav-menu_option.active {
+  color: white;
+  border-bottom-color: white;
+}
+
+#root {
+  padding-top: 5rem;
+}
