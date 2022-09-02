@@ -63,7 +63,6 @@ const popUpFunction = async (id) => {
   const recipe = document.getElementById('recipe');
   recipe.style.display = 'block';
 
-  const commentContainer = document.querySelector('.commentUnorderedList');
   const parent = document.querySelector('.ingredients');
 
   const hideRecipe = document.getElementById('hide-recipe');
@@ -71,30 +70,16 @@ const popUpFunction = async (id) => {
   const ingredients = Object.keys(meals).filter((each) => each.includes('strIngredient') && meals[each] !== '' && meals[each] !== null);
   const formComment = document.querySelector('.forms');
 
-  const commentCounter = document.querySelector('.comment-heading .counter');
-
-  // try {
-  //   const result = await Api.get(`commenting_meal=${id}`);
-  //   result.forEach((each) => {
-  //     commentContainer.append(commentCreationFunction(each));
-  //     let counter = Number(commentCounter.textContent);
-  //     counter += 1;
-  //     commentCounter.textContent = counter;
-  //   });
-  // } catch (err) {
-  //   commentContainer.textContent = 'Comment Not Found !!';
-  // }
   commentCounterHandler(id);
-  
   formComment.addEventListener('submit', (e) => {
     e.preventDefault();
     const { id } = e.target;
     (async () => {
       const commentContainer = document.querySelector('.commentUnorderedList');
-      const commentCounter = document.querySelector('.comment-heading .counter');
+
       const username = document.querySelector('#comment-name').value;
       const comment = document.querySelector('#commentsms').value;
-      const resultant = await Api.post({
+      await Api.post({
         username,
         comment,
         item_id: id,
