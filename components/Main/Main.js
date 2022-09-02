@@ -112,6 +112,8 @@ const mealContainer = () => {
       list.append(article);
 
       ul.append(list);
+      const mealsCounter = document.querySelector('.meal-item__counter');
+      mealsCounter.textContent = ul.children.length;
     });
   })();
   return ul;
