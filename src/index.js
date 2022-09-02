@@ -4,8 +4,10 @@ import Main from '../components/Main/Main.js';
 const menuParent = document.querySelector('.nav-menu_ul');
 
 const allMenu = document.querySelectorAll('.nav-menu_option');
+
 const root = document.querySelector('#root');
 root.append(Main());
+
 
 menuParent.addEventListener('click', (e) => {
   allMenu.forEach((each) => each.classList.remove('active'));
