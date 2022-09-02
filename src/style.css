@@ -60,7 +60,8 @@ h6 {
   font-size: 2.6rem;
 }
 
-.header {
+.header,
+.footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
