@@ -107,3 +107,11 @@ h6 {
 .display-none {
   display: none;
 }
+
+.footer {
+  margin-top: 6rem;
+}
+
+.credit {
+  color: white;
+}
