@@ -1,6 +1,14 @@
 import Api from '../../modules/Api.js';
 import './Popup.css';
 
+const commentCreationFunction = (obj) => {
+  const commentList = document.createElement('li');
+  commentList.className = 'commentUsers';
+  const { creation_date: creationDate, username, comment } = obj;
+  commentList.textContent = `${creationDate} ${username} : ${comment}`;
+  return commentList;
+};
+
 const popUpFunction = async (id) => {
   const overlay = document.getElementById('overlay');
   overlay.classList.remove('disable');
@@ -35,12 +43,28 @@ const popUpFunction = async (id) => {
   `;
   const recipe = document.getElementById('recipe');
   recipe.style.display = 'block';
-
+   
+  const commentContainer = document.querySelector('.commentUnorderedList');
   const parent = document.querySelector('.ingredients');
 
   const hideRecipe = document.getElementById('hide-recipe');
 
   const ingredients = Object.keys(meals).filter((each) => each.includes('strIngredient') && meals[each] !== '' && meals[each] !== null);
+
+  const commentCounter = document.querySelector('.comment-heading .counter');
+
+  try {
+    const result = await Api.get(`commenting_meal=${id}`);
+    result.forEach((each) => {
+      commentContainer.append(commentCreationFunction(each));
+      let counter = Number(commentCounter.textContent);
+      counter += 1;
+      commentCounter.textContent = counter;
+    });
+  } catch (err) {
+    commentContainer.textContent = 'Comment Not Found !!';
+  }
+
 
   ingredients.forEach((each) => {
     const child = document.createElement('li');
@@ -54,5 +78,6 @@ const popUpFunction = async (id) => {
     overlay.classList.add('disable');
   });
 };
+
 
 export default popUpFunction;
