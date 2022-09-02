@@ -9,6 +9,25 @@ const commentCreationFunction = (obj) => {
   return commentList;
 };
 
+const commentCounterHandler = async (id, addNew = false) => {
+  const commentCounter = document.querySelector('.comment-heading .counter');
+  const commentContainer = document.querySelector('.commentUnorderedList');
+  try {
+    const result = await Api.get(`commenting_meal=${id}`);
+    let counter = 0;
+    result.forEach((each) => {
+      commentContainer.append(commentCreationFunction(each));
+      if (!addNew) {
+        counter = Number(commentCounter.textContent);
+      }
+      counter += 1;
+      commentCounter.textContent = counter;
+    });
+  } catch (err) {
+    commentContainer.textContent = 'Comment Not Found !!';
+  }
+};
+
 const popUpFunction = async (id) => {
   const overlay = document.getElementById('overlay');
   overlay.classList.remove('disable');
@@ -50,20 +69,42 @@ const popUpFunction = async (id) => {
   const hideRecipe = document.getElementById('hide-recipe');
 
   const ingredients = Object.keys(meals).filter((each) => each.includes('strIngredient') && meals[each] !== '' && meals[each] !== null);
+  const formComment = document.querySelector('.forms');
 
   const commentCounter = document.querySelector('.comment-heading .counter');
 
-  try {
-    const result = await Api.get(`commenting_meal=${id}`);
-    result.forEach((each) => {
-      commentContainer.append(commentCreationFunction(each));
-      let counter = Number(commentCounter.textContent);
-      counter += 1;
-      commentCounter.textContent = counter;
-    });
-  } catch (err) {
-    commentContainer.textContent = 'Comment Not Found !!';
-  }
+  // try {
+  //   const result = await Api.get(`commenting_meal=${id}`);
+  //   result.forEach((each) => {
+  //     commentContainer.append(commentCreationFunction(each));
+  //     let counter = Number(commentCounter.textContent);
+  //     counter += 1;
+  //     commentCounter.textContent = counter;
+  //   });
+  // } catch (err) {
+  //   commentContainer.textContent = 'Comment Not Found !!';
+  // }
+  commentCounterHandler(id);
+  
+  formComment.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const { id } = e.target;
+    (async () => {
+      const commentContainer = document.querySelector('.commentUnorderedList');
+      const commentCounter = document.querySelector('.comment-heading .counter');
+      const username = document.querySelector('#comment-name').value;
+      const comment = document.querySelector('#commentsms').value;
+      const resultant = await Api.post({
+        username,
+        comment,
+        item_id: id,
+        type: 'comment',
+      });
+      commentContainer.textContent = '';
+      commentCounterHandler(id, true);
+    })();
+    e.target.reset();
+  });
 
   ingredients.forEach((each) => {
     const child = document.createElement('li');
