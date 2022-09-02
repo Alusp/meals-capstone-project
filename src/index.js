@@ -8,7 +8,6 @@ const allMenu = document.querySelectorAll('.nav-menu_option');
 const root = document.querySelector('#root');
 root.append(Main());
 
-
 menuParent.addEventListener('click', (e) => {
   allMenu.forEach((each) => each.classList.remove('active'));
   e.target.classList.add('active');
