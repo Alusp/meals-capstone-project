@@ -13,7 +13,7 @@
 
 ## Live Demo
 
-[**See Project 🚀**](https://alusp.github.io/meals-capstone-project/)
+[**Coming Soon 🚀**]()
 
 
 ## Video Demonstration
