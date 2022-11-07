@@ -13,7 +13,7 @@
 
 ## Live Demo
 
-[**Coming Soon 🚀**]()
+[**Here🚀**](https://ajmeals.netlify.app/)
 
 
 ## Video Demonstration
