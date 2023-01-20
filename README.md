@@ -1,5 +1,5 @@
 
-# Project Name
+# Meals 
 
 > **In this project we have implemented a Single Page Application which does show the meals coming from MealsDB API and we also used the Involvement API in order to record the comments and Like for each meal**
 
@@ -82,13 +82,13 @@ I have added the linters or tests in order to avoid anykind of typos and ensure 
 
 ## Authors
 
-👤 **Author1**
+👤 **Alusine Jalloh**
 
 - GitHub: [@Alusp](https://github.com/Alusp)
 - LinkedIn: [@alusine-jalloh](https://www.linkedin.com/in/alusine-jalloh)
 - Twitter: [@aseni_jalloh](https://twitter.com/aseni_jalloh)
 
-👤 **Author2**
+👤 **Aakash**
 
 - GitHub: [@skyv26](https://github.com/skyv26)
 - Twitter: [@vrma_aakash](https://twitter.com/vrma_aakash)
@@ -110,4 +110,4 @@ Give a ⭐️ if you like this project!
 
 ## 📝 License
 
-This project is [MIT](./LICENSE) licensed.
+This project is [MIT](./MIT.md) licensed.
