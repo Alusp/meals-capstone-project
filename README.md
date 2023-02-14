@@ -1,87 +1,167 @@
+<a name="readme-top"></a>
 
-# Meals 
+<!--
+HOW TO USE:
+This is an example of how you may give instructions on setting up your project locally.
+
+Modify this file to match your project and remove sections that don't apply.
+
+REQUIRED SECTIONS:
+- Table of Contents
+- About the Project
+  - Built With
+  - Live Demo
+- Getting Started
+- Authors
+- Future Features
+- Contributing
+- Show your support
+- Acknowledgements
+- License
+
+OPTIONAL SECTIONS:
+- FAQ
+
+After you're finished please remove all the comments and instructions!
+-->
+
+<div align="center">
+
+  <h3><b>World-Health-Assembly</b></h3>
+
+</div>
+
+<!-- TABLE OF CONTENTS -->
+
+# 📗 Table of Contents
+
+- [📖 About the Project](#about-project)
+  - [🛠 Built With](#built-with)
+    - [Tech Stack](#tech-stack)
+    - [Key Features](#key-features)
+  - [🚀 Live Demo](#live-demo)
+- [💻 Getting Started](#getting-started)
+  - [Setup](#setup)
+  - [Prerequisites](#prerequisites)
+  - [Install](#install)
+  - [Usage](#usage)
+  - [Run tests](#run-tests)
+  - [Deployment](#triangular_flag_on_post-deployment)
+- [👥 Authors](#authors)
+- [🔭 Future Features](#future-features)
+- [🤝 Contributing](#contributing)
+- [⭐️ Show your support](#support)
+- [🙏 Acknowledgements](#acknowledgements)
+- [❓ FAQ (OPTIONAL)](#faq)
+- [📝 License](#license)
+
+<!-- PROJECT DESCRIPTION -->
+
+# Meals  <a name="about-project"></a>
+
 
 > **In this project we have implemented a Single Page Application which does show the meals coming from MealsDB API and we also used the Involvement API in order to record the comments and Like for each meal**
 
 
-## Built With
+## 🛠 Built With <a name="built-with"></a>
 
-- JavaScript ( ES6, Webpack, JEST)
-- HTML5 ( Semantics )
-- CSS3 ( Flexbox, Grid, Box-Model)
+### Tech Stack <a name="tech-stack"></a>
+
+<details>
+  <summary>Client</summary>
+  <ul>
+    <li>HTML</li>
+    <li>CSS</li>
+    <li>JavaScript</li>
+    <li>TailwindCss</li>
+  </ul>
+</details>
+
+<!-- Features -->
+
+### Key Features <a name="key-features"></a>
 
 
-## Live Demo
+- Display all meals
+- Comment on meals
+- Fully Responsive
 
-[**Here🚀**](https://ajmeals.netlify.app/)
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- LIVE DEMO -->
+
+## 🚀 Live Demo <a name="live-demo"></a>
 
 
-## Video Demonstration
-
-[** Watch 😄 **](https://drive.google.com/file/d/1fwDNwqgGSCS1jN-kcN9urNWYLAgeol1T/view?usp=sharing)
-
-## Screenshots 
+- [**Here🚀**](https://ajmeals.netlify.app/)
 
 ![desktop-image](https://user-images.githubusercontent.com/43528594/218848666-1f6a162b-ff88-41de-9451-8890d356453f.png)
 
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- GETTING STARTED -->
+
+## 💻 Getting Started <a name="getting-started"></a>
 
 
-## Getting Started
-
-To get a local copy up and running follow these simple example steps. Please make sure on order to use the this project you need to install all dependencies.
+To get a local copy up and running, follow these steps.
 
 ### Prerequisites
 
-- In order to explore this repository, you must have a good knowledge on HTML5 - semantics, CSS and JavaScript with ES6 and webpack.
+In order to run this project you need:
+
+
+```sh
+ Node.js
+```
 
 ### Setup
 
-- Use the below command for taking clone this project
+Clone this repository to your desired folder:
 
-  `git clone https://github.com/Alusp/meals-capstone-project.git`
+
+```sh
+  cd my-folder
+  git clone https://github.com/Alusp/meals-capstone-project.git
+```
+
 
 ### Install
 
+Install this project with:
 
-- Make sure that you have already downloaded the `node` and `npm` on your system. If yes, then install the 
-  packages by using below command.
-  
-  `npm i`
+
+```sh
+  cd meals-capstone-project
+  npm install
+```
 
 ### Usage
 
-- You can simply use run-server vscode extension to run this website on your local browser.
+To run the project:
 
-
-### Run tests
-
-I have added the linters or tests in order to avoid anykind of typos and ensure the good practices in this project. So while using this repository if you need to check your work no matters have worked on html, css and js you can use below commands
-
-- In order to run the linter test on `index.html` or any html file. Use below command
-
-  `npx hint .`
-
-- To run linter test on stylesheets. Use below command
-
-  `npx stylelint "**/*.{css,scss}"`
-
-- To run linter test on javascript files. Use below command
-
-  `npx eslint .`
-
-- To run the development server use below command
-
-  `npm start`
-
-- To create build file. Use below command
+```sh
+  npm start
+```
+To create build file. Use below command
 
   `npm run build`
 
-- To run the JEST Test below command
+To run the JEST Test below command
 
   `npm run test`
 
-## Authors
+### Deployment
+
+You can deploy this project using github pages
+
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- AUTHORS -->
+
+## 👥 Authors <a name="authors"></a>
+
 
 👤 **Alusine Jalloh**
 
@@ -97,18 +177,50 @@ I have added the linters or tests in order to avoid anykind of typos and ensure 
 - Frontend Mentor: [@skyv26](https://www.frontendmentor.io/profile/skyv26)
 
 
-## 🤝 Contributing
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- FUTURE FEATURES -->
+
+## 🔭 Future Features <a name="future-features"></a>
+
+- [ ] Add Orders
+- [ ] Payments
+- [ ] Notifications
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- CONTRIBUTING -->
+
+## 🤝 Contributing <a name="contributing"></a>
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](../../issues/).
+Feel free to check the [issues page](https://github.com/Alusp/meals-capstone-project/issues).
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- SUPPORT -->
+
+## ⭐️ Show your support <a name="support"></a>
 
 
-## Show your support
+If you like this project please leave a star
 
-Give a ⭐️ if you like this project!
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- ACKNOWLEDGEMENTS -->
+
+## 🙏 Acknowledgments <a name="acknowledgements"></a>
+
+Thank you to Microverse for the inspiration
+ 
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
-## 📝 License
+<!-- LICENSE -->
+
+## 📝 License <a name="license"></a>
 
 This project is [MIT](./MIT.md) licensed.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
