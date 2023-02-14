@@ -26,7 +26,7 @@
   width: 60vw;
   height: 90vh;
   max-height: max-content;
-  margin: auto;
+  margin-top: 80px;
   padding: 1.6rem;
   background-color: white;
   z-index: 5;
@@ -72,7 +72,7 @@
 
 .ingredient-img {
   display: block;
-  width: 40%;
+  width: 30%;
   margin: 1.8em auto 0 auto;
 }
 
@@ -115,13 +115,6 @@
   position: relative;
 }
 
-/* .ingredient-list::before {
-  content: '•';
-  position: absolute;
-  top: 0;
-
-} */
-
 .details h4 {
   font-size: 1em;
   font-weight: 400;
@@ -145,7 +138,7 @@
 }
 
 .commentUnorderedList {
-  font-size: 1em;
+  font-size: 1.5em;
   position: relative;
   display: grid;
   grid-template-columns: auto auto;
@@ -182,19 +175,20 @@
   font-size: 1em;
   padding: 0.6em;
   border-width: 0.3rem;
+  border-color: rgb(25, 24, 24);
 }
 
 #commentsms {
   padding: 0.6em;
   border-width: 0.3rem;
-  border-color: black;
+  border-color: rgb(25, 24, 24);
 }
 
 #hide-recipe {
-  font-size: 1em;
+  font-size: 1.5rem;
   position: relative;
-  width: 1.8em;
-  height: 1.8em;
+  width: 2.5em;
+  height: 2.5em;
   background-color: aqua;
   border: none;
   top: 1.2em;
@@ -216,22 +210,61 @@
   display: flex;
   flex-direction: column;
   align-content: center;
-  margin-left: 3.5em;
   gap: 1.05em;
 }
 
 .combutton {
-  margin-left: 3.5em;
   margin-top: 0.5rem;
-  margin-bottom: 0.9rem;
+  margin-bottom: 3rem;
   font-size: 1em;
   padding: 0.6em;
+  width: 180px;
   border-width: 0.3rem;
   border-color: black;
+}
+
+#button-center {
+  margin-left: 32rem;
 }
 
 @media screen and (max-width: 500px) {
   .container {
     font-size: 14px;
+  }
+
+  .ingredients {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    padding-left: 3rem;
+    margin: 2rem auto 0 auto;
+    column-gap: 2.5rem;
+  }
+
+  .modalWindow {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 2.4rem;
+    width: 80vw;
+    height: 90vh;
+    max-height: max-content;
+    margin-top: 80px;
+    padding: 2.6rem;
+    background-color: white;
+    z-index: 5;
+    overflow-y: scroll;
+  }
+
+  .commentlist .commentUnorderedList {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-left: 10px;
+  }
+
+  #button-center {
+    margin-left: 2rem;
   }
 }
