@@ -11,7 +11,7 @@ import './Main.css';
 
 const ul = ListContainer({
   component: 'ul',
-  className: 'meals-grid_wrapper',
+  className: 'meals-grid_wrapper mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 mt-12',
 });
 
 const likeApiHandler = (resultant, id) => resultant.filter((each) => each.item_id === id);
@@ -19,16 +19,16 @@ const likeApiHandler = (resultant, id) => resultant.filter((each) => each.item_i
 const mealContainer = () => {
   (async () => {
     const resultant = await Api.get('getting_meal');
-    if (typeof resultant === 'string') {
-      // a
-    }
+    // if (typeof resultant === 'string') {
+    //   // a
+    // }
     const { meals } = resultant;
     ListContainer.textContent = '';
     const likeResultant = await Api.get({ type: 'like' });
 
     meals.forEach((eachList) => {
       const list = List({
-        className: 'meals-grid_wrapper-list',
+        className: 'meals-grid_wrapper-list card w-full shadow-xl rounded-lg pb-8 overflow-hidden my-3',
         id: `meal-card-${eachList.idMeal}`,
       });
 
@@ -67,7 +67,7 @@ const mealContainer = () => {
 
       const label = Wrapper({
         component: 'label',
-        className: 'checkbox-wrapper',
+        className: 'checkbox-wrapper mt-2',
         for: `like-count-${eachList.idMeal}`,
       });
 
@@ -103,7 +103,7 @@ const mealContainer = () => {
       div4.append(label, counterP);
 
       const btn = Button({
-        className: 'comment-btn',
+        className: 'comment-btn py-2 px-10 border border-orange-700 rounded-full text-orange-700 hover:bg-orange-700 hover:text-orange-100 text-lg',
         textContent: 'comments',
         onclick: () => popUpFunction(eachList.idMeal),
       });

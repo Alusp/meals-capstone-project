@@ -38,24 +38,25 @@ const popUpFunction = async (id) => {
     <div class="modalWindow">
     <div id="recipe"> 
       <button id="hide-recipe"> X</button>
-      <img src=${meals.strMealThumb} class="ingredient-img">
+      <img src=${meals.strMealThumb} class="ingredient-img rounded-lg">
       <div class="foodname">
         <h2>${meals.strMeal}</h2>
       </div>
+      
       <ul class="ingredients"></ul>
       <div class="people-comment">
         <h2 class="comment-heading">Comments( <span class="counter">0</span> )</h2>
       </div>
       <div class="commentlist">
-        <ul class="commentUnorderedList"></ul>
+        <ul class="commentUnorderedList opacity-70"></ul>
       </div>
       <div class="commenttext">
         <h2>Add a comment</h2>
       </div>
       <form class="forms" id=${id}>
-        <input type="text" placeholder="Enter your name" id="comment-name" />
-        <textarea id="commentsms" name="message" rows="4" cols="50" placeholder="Your insights" required></textarea>
-        <button class="combutton" type="submit">Comment</button>
+        <input type="text" class="opacity-70" placeholder="Enter your name" id="comment-name" />
+        <textarea class="opacity-70" id="commentsms" name="message" rows="4" cols="50" placeholder="Your insights" required></textarea>
+        <button class="combutton opacity-70 border border-orange-700 rounded-full text-orange-700              hover:bg-orange-700 hover:text-orange-100              text-lg" type="submit" id="button-center">Comment</button>
       </form>
     </div>
   </div>

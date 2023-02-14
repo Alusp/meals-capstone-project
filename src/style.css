@@ -35,11 +35,6 @@ body {
   width: 100%;
   min-height: 100%;
   height: max-content;
-  background-image: linear-gradient(to bottom, #da58a2, #bd61ac, #a068b0, #846cac, #6c6da2, #636da1, #596d9f, #506d9d, #486ea8, #3e70b3, #2f71be, #1573c9);
-
-  @media (min-width: 550px) {
-    background-image: linear-gradient(to right bottom, #da58a2, #bd61ac, #a068b0, #846cac, #6c6da2, #636da1, #596d9f, #506d9d, #486ea8, #3e70b3, #2f71be, #1573c9);
-  }
 }
 
 ul {
@@ -60,13 +55,13 @@ h6 {
   font-size: 2.6rem;
 }
 
-.header,
 .footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
   font-size: 2rem;
   padding: 1.6rem 2.6rem;
+  margin-top: 6rem;
 }
 
 .logo {
@@ -75,29 +70,31 @@ h6 {
 }
 
 .nav-menu {
+  float: right;
   width: auto;
 }
 
 .nav-menu_ul {
   display: flex;
-  gap: 3rem;
+  gap: 4rem;
+  cursor: pointer;
   justify-content: flex-end;
 }
 
 .nav-menu_option {
   border: 0.2rem solid transparent;
-  padding: 1rem;
+  padding: 0.8rem;
 }
 
 .nav-menu_option:hover {
   cursor: pointer;
-  color: white;
-  border-bottom-color: rgba(255, 255, 255, 0.829);
+  color: rgb(160, 9, 9);
+  border-bottom-color: rgba(40, 37, 37, 0.829);
 }
 
 .nav-menu_option.active {
-  color: white;
-  border-bottom-color: white;
+  color: rgb(37, 27, 27);
+  border-bottom-color: rgb(215, 7, 7);
 }
 
 #root {
@@ -106,10 +103,6 @@ h6 {
 
 .display-none {
   display: none;
-}
-
-.footer {
-  margin-top: 6rem;
 }
 
 .credit {

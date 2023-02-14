@@ -4,23 +4,46 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <title>Meal | Alusky</title>
 </head>
 <body>
-  <header class="header">
-    <a href="#" class="logo">Meal DB</a>
-    <nav class="nav-menu">
-      <ul class="nav-menu_ul">
-        <li class="nav-menu_option active" id="meals">Meals (<span class="meal-item__counter">0</span>)</li>
-        <li class="nav-menu_option" id="most_liked">Most Liked</li>
-      </ul>
-    </nav>
+  <header class="py-10 shadow-lg sticky top-0 bg-white z-50">
+    <div class="mx-4 md:container md:mx-8 lg:mx-16 ">
+      <a href="./index.html" class="text-xl md:text-3xl font-bold text-orange-700 mr-16">Meal DB</a>
+      <nav class="nav-menu">
+        <ul class="nav-menu_ul">
+          <li class="nav-menu_option active md:text-2xl">Meals (<span class="md:text-2xl font-semibold food-counter meal-item__counter">0</span>)</li>
+          <li class="nav-menu_option md:text-2xl font-semibold" id="most_liked">Most Liked</li>
+        </ul>
+      </nav>
+    </div>
   </header>
+
+  <section class="h-56 flex justify-center items-center hero-section bg-orange-700">
+    <div class="md:container md:mx-auto text-center">
+      <h1 class="text-4xl md:text-6xl tracking-widest text-white">
+        Healthy food delivery
+      </h1>
+      <p class="text-white my-3 md:text-2xl">
+        Enjoy delicious healthy meals that will help you lose weight 💪 <br />
+         at your door step
+      </p>
+    </div>
+  </section>
+
   <div id="overlay" class="disable"></div>
+  
   <div id="root"></div>
   <footer class="footer">
-    <p class="credit">Created by <a class="social-profile" href="https://github.com/Alusp">Alusine</a> and <a class="social-profile" href="https://github.com/skyv26"> Aakash</a></p>
+    <p class="opacity-70">Created by <a 
+      target="_blank"
+      rel="noreferrer noopener"
+      class="social-profile text-orange-600" href="https://github.com/Alusp">Alusine</a> and <a 
+      target="_blank"
+      rel="noreferrer noopener"
+      class="social-profile text-orange-600" href="https://github.com/skyv26"> Aakash</a></p>
   </footer>
 </body>
 </html>
