@@ -22,7 +22,8 @@
 
 ## Screenshots 
 
-![Desktop Design](./desktopScreenshot.png)
+![desktop-image](https://user-images.githubusercontent.com/43528594/218848666-1f6a162b-ff88-41de-9451-8890d356453f.png)
+
 
 
 ## Getting Started
