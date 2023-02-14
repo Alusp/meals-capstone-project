@@ -1,16 +1,11 @@
 .meals-grid_wrapper {
   list-style: none;
-  display: grid;
-  grid-template-columns: repeat(4, 25rem);
-  justify-items: center;
-  justify-content: center;
   gap: 3.2rem;
+  padding: 0 10rem;
 }
 
 .meals-grid_wrapper-list {
   padding: 2rem;
-  background-color: rgb(114, 187, 251);
-  border-radius: 1.75rem;
 }
 
 .meals-grid_wrapper-article {
@@ -77,4 +72,10 @@
 /* When the checkbox is checked, add a blue background */
 .checkbox-wrapper .like-checkbox:checked ~ .icon {
   color: crimson;
+}
+
+@media screen and (max-width: 500px) {
+  .meals-grid_wrapper {
+    padding: 0 2rem;
+  }
 }
